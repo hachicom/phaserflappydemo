@@ -51,7 +51,7 @@ FlappyBirdReturns.Menu.prototype = {
     this.startButton = this.game.add.button(this.game.width/2, 300, 'startButton', this.startClick, this);
     this.startButton.anchor.setTo(0.5,0.5);
     
-    titleMusic.play();
+    //titleMusic.play();
     
   },
   
@@ -64,9 +64,9 @@ FlappyBirdReturns.Menu.prototype = {
   startClick: function() {  
       // start button click handler
       // start the 'play' state
-      titleMusic.stop();
+      //titleMusic.stop();
       //this.game.state.start('Play');
-      this.game.plugin.fadeAndPlay("rgb(0,0,0)",0.5,"Play",stageMusic,false);	
+      this.game.plugin.fadeAndPlay("rgb(0,0,0)",0.5,"Play");	
   },
 };
 

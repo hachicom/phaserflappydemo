@@ -116,7 +116,7 @@ FlappyBirdReturns.Play.prototype = {
     } else if (enemy instanceof Pipe){
         this.pipeSound.play();
     }
-    stageMusic.pause();
+    //stageMusic.pause();
     
     if(!this.gameover) {
         this.gameover = true;

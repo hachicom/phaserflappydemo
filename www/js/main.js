@@ -7,19 +7,14 @@
 
 var FlappyBirdReturns = FlappyBirdReturns || {};
 
-/* ANOTHER WAY OF LOADING STATES */
-// var BootState = require('./states/boot');  
-// var GameoverState = require('./states/gameover');  
-// var MenuState = require('./states/menu');  
-// var PlayState = require('./states/play');  
-// var PreloadState = require('./states/preload');
+window.onload = function () {
+  FlappyBirdReturns.game = new Phaser.Game(288, 505, Phaser.AUTO, '');
 
-FlappyBirdReturns.game = new Phaser.Game(288, 505, Phaser.AUTO, '');
+  FlappyBirdReturns.game.state.add('Boot', FlappyBirdReturns.Boot);
+  FlappyBirdReturns.game.state.add('Preload', FlappyBirdReturns.Preload);
+  FlappyBirdReturns.game.state.add('Menu', FlappyBirdReturns.Menu);
+  FlappyBirdReturns.game.state.add('Play', FlappyBirdReturns.Play);
+  FlappyBirdReturns.game.state.add('Gameover', FlappyBirdReturns.Gameover);
 
-FlappyBirdReturns.game.state.add('Boot', FlappyBirdReturns.Boot);
-FlappyBirdReturns.game.state.add('Preload', FlappyBirdReturns.Preload);
-FlappyBirdReturns.game.state.add('Menu', FlappyBirdReturns.Menu);
-FlappyBirdReturns.game.state.add('Play', FlappyBirdReturns.Play);
-FlappyBirdReturns.game.state.add('Gameover', FlappyBirdReturns.Gameover);
-
-FlappyBirdReturns.game.state.start('Boot');
+  FlappyBirdReturns.game.state.start('Boot');
+}

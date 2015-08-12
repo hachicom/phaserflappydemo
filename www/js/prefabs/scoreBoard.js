@@ -32,7 +32,7 @@ Scoreboard.prototype.constructor = Scoreboard;
 
 Scoreboard.prototype.startClick = function() {  
   //stageMusic.resume();
-  this.game.plugin.fadeAndPlay("rgb(0,0,0)",0.5,"Play",stageMusic,true);
+  this.game.plugin.fadeAndPlay("rgb(0,0,0)",0.5,"Play");
   // this.game.state.start('Play');
 };
 

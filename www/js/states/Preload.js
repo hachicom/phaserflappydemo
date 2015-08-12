@@ -44,21 +44,22 @@ FlappyBirdReturns.Preload.prototype = {
     this.load.audio('flap', 'assets/audio/flap.wav');
     this.load.audio('pipeHit', 'assets/audio/pipe-hit.wav');
     this.load.audio('groundHit', 'assets/audio/ground-hit.wav');
-    this.load.audio('bgm1', 'assets/audio/bgm.ogg');
-    this.load.audio('bgm2', 'assets/audio/stage1.ogg');
-    this.load.audio('bgm3', 'assets/audio/stage3.ogg');
+    // this.load.audio('bgm1', 'assets/audio/bgm.ogg');
+    // this.load.audio('bgm2', 'assets/audio/stage1.ogg');
+    // this.load.audio('bgm3', 'assets/audio/stage3.ogg');
   },
   
   create: function() {
     //this.asset.cropEnabled = false;
     this.loadingText.setText('Decoding BGM... Please Wait...');
-    titleMusic = this.game.add.audio('bgm1', 1, true);
-    stageMusic = this.game.add.audio('bgm2', 1, true);
+    //titleMusic = this.game.add.audio('bgm1', 1, true);
+    //stageMusic = this.game.add.audio('bgm2', 1, true);
   },
   
   update: function() {
-    if(!!this.ready && this.cache.isSoundDecoded('bgm1')) {
-      this.state.start('Menu');
+    if(!!this.ready) {
+      //this.state.start('Menu');
+      this.game.plugin.fadeAndPlay("rgb(0,0,0)",0.5,"Menu");
     }
   },
   onLoadComplete: function() {
