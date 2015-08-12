@@ -1,4 +1,7 @@
-var FlappyBirdReturns = FlappyBirdReturns || {};
+var FlappyBirdReturns = {
+	_WIDTH: 288,
+	_HEIGHT: 505
+};
 
 FlappyBirdReturns.Boot = function(){};
 
@@ -14,17 +17,9 @@ FlappyBirdReturns.Boot.prototype = {
     this.game.stage.backgroundColor = '#fff';
 
     //scaling options
-    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-    this.scale.minWidth = 240;
-    this.scale.minHeight = 170;
-    this.scale.maxWidth = 480;
-    this.scale.maxHeight = 640;
-    
-    //have the game centered horizontally
-    this.scale.pageAlignHorizontally = true;
-
-    //screen size will be set automatically
-    // DEPRECATED this.scale.setScreenSize(true);
+		this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+		this.game.scale.pageAlignHorizontally = true;
+		this.game.scale.pageAlignVertically = true;
 
     //physics system for movement
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
