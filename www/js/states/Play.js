@@ -118,9 +118,6 @@ FlappyBirdReturns.Play.prototype = {
     }
     //stageMusic.pause();
 		// Vibration API
-		if("vibrate" in window.navigator) {
-			window.navigator.vibrate(100);
-		}
     
     if(!this.gameover) {
         this.gameover = true;
@@ -128,6 +125,9 @@ FlappyBirdReturns.Play.prototype = {
         this.pipes.callAll('stop');
         this.pipeGenerator.timer.stop();
         this.ground.stopScroll();
+        if("vibrate" in window.navigator) {
+          window.navigator.vibrate(100);
+        }
     }
   },
   
