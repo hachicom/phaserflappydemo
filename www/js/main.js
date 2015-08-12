@@ -7,8 +7,14 @@
 
 var FlappyBirdReturns = FlappyBirdReturns || {};
 
-window.onload = function () {
-  FlappyBirdReturns.game = new Phaser.Game(288, 505, Phaser.AUTO, '');
+document.addEventListener("deviceready", function() {
+    setTimeout(function() {
+        navigator.splashscreen.hide();
+    }, 5000, false);
+});
+
+(function() {
+  FlappyBirdReturns.game = new Phaser.Game(288, 505, Phaser.CANVAS, 'game');
 
   FlappyBirdReturns.game.state.add('Boot', FlappyBirdReturns.Boot);
   FlappyBirdReturns.game.state.add('Preload', FlappyBirdReturns.Preload);
@@ -17,4 +23,4 @@ window.onload = function () {
   FlappyBirdReturns.game.state.add('Gameover', FlappyBirdReturns.Gameover);
 
   FlappyBirdReturns.game.state.start('Boot');
-}
+})();

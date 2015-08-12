@@ -117,6 +117,10 @@ FlappyBirdReturns.Play.prototype = {
         this.pipeSound.play();
     }
     //stageMusic.pause();
+		// Vibration API
+		if("vibrate" in window.navigator) {
+			window.navigator.vibrate(100);
+		}
     
     if(!this.gameover) {
         this.gameover = true;
